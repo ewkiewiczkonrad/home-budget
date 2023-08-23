@@ -1,0 +1,14 @@
+<div>Home Budget</div>
+<form [formGroup]="form">
+<input type="text" pInputText formControlName="name"/>
+<button pButton pRipple label="Submit" class="p-button-success" (click)="addItem()"></button>
+
+
+<div *ngFor="let item of items">
+    <div>{{item.name}}</div>
+    <input type="text" pInputText  value="{{item.costs}}"/>
+    <button pButton pRipple label="ok" class="p-button-success" (click)="addCost(item)"></button>
+</div>
+
+</form>
+<button pButton pRipple label="clear" class="p-button-success" (click)="clearStorage()"></button>
